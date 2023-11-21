@@ -9,7 +9,7 @@
 ## 🌸 Contributors 섭팟이들
 |                             정준서                             |                               송민규                        |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/72034311/202870052-6b0a0045-0edf-42b0-8e74-9653589f3e35.png" width="300" height="220"/> | <img src="https://user-images.githubusercontent.com/72034311/202870052-6b0a0045-0edf-42b0-8e74-9653589f3e35.png" width="300" height="220"/>  |
+| <img src="https://user-images.githubusercontent.com/72034311/202870052-6b0a0045-0edf-42b0-8e74-9653589f3e35.png" width="300" height="220"/> | <img src="https://github.com/DOSOPT-CDS-WEB-TEAM2/SERVER/assets/78674565/3a91816a-00c0-4081-80dd-c21963ad538d" width="300" height="300" /> |
 |               [sunseo18](https://github.com/sunseo18)               |             [mikekks](https://github.com/mikekks)              |
 
 <hr>
