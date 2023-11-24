@@ -1,11 +1,7 @@
 package org.sopt.api.stockIndex.controller;
 
-import static java.util.Collections.emptyList;
-
 import jakarta.annotation.Nullable;
-import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.sopt.api.stockIndex.controller.dto.response.GetStockIndexResponseDto;
 import org.sopt.api.stockIndex.service.StockIndexService;
 import org.sopt.domain.Continent;
 import org.springframework.http.ResponseEntity;
@@ -23,12 +19,11 @@ public class StockIndexController {
 
 
     @GetMapping
-    public ResponseEntity<List<GetStockIndexResponseDto>> getStockIndexList(
+    public ResponseEntity<Object> getStockIndexList(
             @Nullable @RequestParam String continent) {
 
         if (continent == null) {
-            // TODO: 전체 시장 지수 조회
-            return ResponseEntity.ok(emptyList());
+            return ResponseEntity.ok(stockIndexService.getAllStockIndexAndGroupByContinent());
         }
 
         return ResponseEntity.ok(stockIndexService.getStockIndexByContinent(Continent.find(continent)));
