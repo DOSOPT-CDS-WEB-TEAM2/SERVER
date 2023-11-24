@@ -165,7 +165,8 @@ gradle-app.setting
 ### Config ###
 application.yaml
 application.yml
-
+*.yml
+application-dev.yml
 ### Test ###
 data.sql
 
