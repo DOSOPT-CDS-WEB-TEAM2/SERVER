@@ -4,7 +4,6 @@ import static jakarta.persistence.EnumType.STRING;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -40,7 +39,7 @@ public class Stock {
 
     private String fluctuationPrice;
 
-    private String previousDayIncrease;
+    private String previousDayClosingPrice;
 
     private String marketCapitalization;
 
