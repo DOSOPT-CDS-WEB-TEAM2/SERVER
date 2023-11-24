@@ -9,7 +9,7 @@ import org.sopt.api.stockIndex.controller.dto.response.GetStockIndexResponseDto;
 import org.sopt.common.util.StockIndexGrouper;
 import org.sopt.domain.Continent;
 import org.sopt.domain.StockIndex;
-import org.sopt.domain.repository.StockRepository;
+import org.sopt.domain.repository.StockIndexRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,16 +17,16 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly = true)
 @Service
 public class StockIndexService {
-    private final StockRepository stockRepository;
+    private final StockIndexRepository stockIndexRepository;
 
     public List<GetStockIndexResponseDto> getStockIndexByContinent(Continent continent) {
-        List<StockIndex> stockIndexList = stockRepository.findAllByContinent(continent);
+        List<StockIndex> stockIndexList = stockIndexRepository.findAllByContinent(continent);
 
         return stockIndexList.stream().map(GetStockIndexResponseDto::of).toList();
     }
 
     public Map<String, List<GetStockIndexResponseDto>> getAllStockIndexAndGroupByContinent() {
-        List<StockIndex> stockIndexList = stockRepository.findAll();
+        List<StockIndex> stockIndexList = stockIndexRepository.findAll();
         StockIndexGrouper stockIndexGrouper = new StockIndexGrouper(stockIndexList);
 
         Map<Continent, List<StockIndex>> stockIndexMapByContinent = stockIndexGrouper.groupByContinent();
