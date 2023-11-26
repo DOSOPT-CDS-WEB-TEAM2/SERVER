@@ -10,9 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import java.util.ArrayList;
-import java.util.List;
+import jakarta.persistence.ManyToOne;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -60,8 +58,8 @@ public class Stock {
     private int tradeAmount;
 
     @JoinColumn(name = "portfolio_id")
-    @OneToMany(fetch = FetchType.LAZY)
-    private List<Portfolio> portfolio = new ArrayList<>();
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Portfolio portfolio;
 
     @Enumerated(value = STRING)
     private Type type;
