@@ -21,6 +21,6 @@ public class PortfolioService {
         Portfolio portfolio = portfolioRepository.findByIdOrElseThrowException(1L);
         List<Stock> stockList = stockRepository.findAllByPortfolio(portfolio);
 
-        return stockList.stream().map(stock -> GetPortfolioResponseDto.of(stock)).toList();
+        return stockList.stream().map(GetPortfolioResponseDto::of).toList();
     }
 }
