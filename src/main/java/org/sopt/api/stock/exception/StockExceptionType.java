@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 public enum StockExceptionType implements ExceptionType {
     NOT_FOUND_STOCK(HttpStatus.NOT_FOUND, "존재하지 않는 주식입니다."),
     NOT_FOUND_RELATED_STOCK(HttpStatus.NOT_FOUND, "관련된 주식은 존재하지 않습니다."),
-    BAD_REQUEST_ORDER_BY(HttpStatus.BAD_REQUEST, "정렬 순서가 올바르지 않습니다.");
+    BAD_REQUEST_ORDER_BY(HttpStatus.BAD_REQUEST, "정렬 요청이 올바르지 않습니다.");
 
 
     private final HttpStatus httpStatus;
