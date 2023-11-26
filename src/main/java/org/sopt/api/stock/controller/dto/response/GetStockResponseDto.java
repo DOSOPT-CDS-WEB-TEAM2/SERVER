@@ -8,12 +8,13 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.AccessLevel;
 import lombok.Builder;
 import org.sopt.domain.Portfolio;
 import org.sopt.domain.Stock;
 import org.sopt.domain.Type;
 
-@Builder
+@Builder(access = AccessLevel.PRIVATE)
 public record GetStockResponseDto(
         String code,
         String name,
