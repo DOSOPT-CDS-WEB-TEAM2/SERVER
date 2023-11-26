@@ -3,8 +3,10 @@ package org.sopt.api.stock.controller;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.sopt.api.stock.controller.dto.response.GetRelatedStockResponseDto;
+import org.sopt.api.stock.controller.dto.response.GetStockOrderByTradeAmountResponseDto;
 import org.sopt.api.stock.controller.dto.response.GetStockResponseDto;
 import org.sopt.api.stock.service.StockService;
+import org.sopt.domain.Order;
 import org.sopt.domain.Type;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,10 +27,17 @@ public class StockController {
         return ResponseEntity.ok(stockService.getStock(stockCode));
     }
 
-    @GetMapping
+    @GetMapping(params = "type")
     public ResponseEntity<List<GetRelatedStockResponseDto>> getRelatedStockList(
             @RequestParam String type) {
 
         return ResponseEntity.ok(stockService.getRelatedStockList(Type.find(type)));
+    }
+
+    @GetMapping(params = "order")
+    public ResponseEntity<List<GetStockOrderByTradeAmountResponseDto>> getStockOrderByTrading(
+            @RequestParam String order
+    ){
+        return ResponseEntity.ok(stockService.getStockOrderByTrading(Order.find(order)));
     }
 }
