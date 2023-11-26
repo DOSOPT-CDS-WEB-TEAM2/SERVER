@@ -21,9 +21,9 @@ public class StockService {
         return GetStockResponseDto.of(stock);
     }
 
-    public List<GetRelatedStockResponseDto> getRelatedStockList(Type type){
+    public List<GetRelatedStockResponseDto> getRelatedStockList(Type type) {
         List<Stock> relatedStockList = stockRepository.findAllByType(type);
         return relatedStockList.stream().
-                map(stock->GetRelatedStockResponseDto.of(stock)).toList();
+                map(stock -> GetRelatedStockResponseDto.of(stock)).toList();
     }
 }
