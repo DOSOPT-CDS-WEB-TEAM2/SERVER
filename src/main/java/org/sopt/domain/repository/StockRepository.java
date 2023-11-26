@@ -11,11 +11,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
 
 public interface StockRepository extends Repository<Stock, String> {
-    List<Stock> getAllByOrderByTradeAmountDesc();
+    List<Stock> getTop6ByOrderByTradeAmountDesc();
 
     List<Stock> findAllByType(Type type);
 
-    //Stock findByCode(String code);
     Optional<Stock> findByCode(String code);
 
     default Stock findByCodeOrThrow(String code) {

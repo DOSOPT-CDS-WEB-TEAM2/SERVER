@@ -2,6 +2,7 @@ package org.sopt.api.stock.service;
 
 import static org.sopt.domain.Order.TRADE_ASC;
 
+import java.util.Collections;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.sopt.api.stock.controller.dto.response.GetRelatedStockResponseDto;
@@ -32,13 +33,13 @@ public class StockService {
     }
 
     public List<GetStockOrderByTradeAmountResponseDto> getStockOrderByTrading(Order order) {
-        List<Stock> StockListOrderByTrading = null;
+        List<Stock> StockListOrderByTrading = Collections.emptyList();
 
         if (order.equals(TRADE_ASC)) {
-            StockListOrderByTrading = stockRepository.getAllByOrderByTradeAmountDesc();
+            StockListOrderByTrading = stockRepository.getTop6ByOrderByTradeAmountDesc();
         }
 
         return StockListOrderByTrading.stream()
-                .map(stock -> GetStockOrderByTradeAmountResponseDto.of(stock)).toList();
+                .map(GetStockOrderByTradeAmountResponseDto::of).toList();
     }
 }
