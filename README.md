@@ -25,6 +25,10 @@
 
 <hr>
 
+## 🤖 Architect
+<img width="727" alt="image" src="https://github.com/DOSOPT-CDS-WEB-TEAM2/SERVER/assets/78674565/eed93e91-fdcd-48bf-bf5f-b971aa1a4e11">
+
+
 ## 👻 API Docs
 
 ### 🔗 [API Docs](https://www.notion.so/dosopt/c619201760524fc19526a48476524250?v=696b99826bdc41129935eaffb453aa5a&pvs=4)
